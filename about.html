@@ -1,131 +1,268 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About Me — Swoon Properties</title>
-<meta name="description" content="Meet your buyer's agent — why I focus exclusively on representing home buyers, not sellers.">
-<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-<link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
+/* =========================================================
+   SWOON PROPERTIES — design tokens
+   Palette: deep forest ink, warm stone parchment, brass accent,
+   brick secondary. Signature motif: architectural blueprint
+   dimension-lines used as dividers + spec callouts.
+   Type: Fraunces (display) / Manrope (body) / IBM Plex Mono (data)
+   ========================================================= */
 
-<header class="site">
-  <div class="nav-row">
-    <a href="index.html" class="brand">
-      <svg class="mark" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg">
-        <path d="M28 8 L44 14 L44 28 C44 38 36 45 28 48 C20 45 12 38 12 28 L12 14 Z" fill="#2C4A3B"/>
-        <text x="28" y="34" text-anchor="middle" font-family="Fraunces,Georgia,serif" font-size="19" font-weight="600" fill="#F3EFE6">S</text>
-      </svg>
-      <span>Swoon Properties<small>Buyer's Agent</small></span>
-    </a>
-    <nav class="links">
-      <a href="index.html">Home</a>
-      <a href="about.html" class="active">About Me</a>
-      <a href="services.html">Services</a>
-      <a href="listings-subsale.html">Subsale Listings</a>
-      <a href="listings-project.html">Project Listings</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-    <div class="nav-cta">
-      <a href="contact.html" class="btn btn-primary">Talk to Me</a>
-      <button class="menu-toggle" aria-label="Toggle menu">☰</button>
-    </div>
-  </div>
-</header>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Manrope:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
 
-<section class="hero" style="padding:56px 0 44px;">
-  <div class="wrap" style="grid-template-columns:1fr;max-width:760px;">
-    <div>
-      <p class="eyebrow">About Me</p>
-      <h1>I only work for buyers. That's the whole point.</h1>
-      <p class="lede">Most agents represent whoever pays them a commission — often the seller. I built my practice around one client only: you, the buyer.</p>
-    </div>
-  </div>
-</section>
+:root{
+  --ink:#16241E;
+  --forest:#2C4A3B;
+  --forest-light:#3E6350;
+  --parchment:#F3EFE6;
+  --parchment-dim:#EAE4D6;
+  --brass:#A9793C;
+  --brass-light:#C79A5C;
+  --brick:#A14E3B;
+  --text:#1E2A24;
+  --text-soft:#5B675F;
+  --line:#D8CFBC;
+  --white:#FFFDF9;
 
-<section>
-  <div class="wrap two-col">
-    <div style="border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);"><img src="assets/agent-photo.jpg" alt="Portrait of the Swoon Properties buyer's agent" style="aspect-ratio:2/3;object-fit:cover;"></div>
-    <div>
-      <p class="eyebrow">My Story</p>
-      <h2>Why I became a buyer's agent</h2>
-      <p style="margin-top:16px;color:var(--text-soft);">[Edit this: share a short, honest version of how you got into real estate and why you chose to specialize in representing buyers rather than sellers. 2–3 sentences works well — people connect with specifics, not slogans.]</p>
-      <p style="margin-top:16px;color:var(--text-soft);">[Edit this: mention how many years you've been active, any relevant licenses/certifications, and the areas you focus on, e.g. Klang Valley, Rawang, Selangor.]</p>
-      <div style="margin-top:24px;display:flex;gap:10px;flex-wrap:wrap;">
-        <span class="badge">Licensed Real Estate Negotiator</span>
-        <span class="badge">Klang Valley &amp; Selangor</span>
-        <span class="badge">Buyer-Only Representation</span>
-      </div>
-    </div>
-  </div>
-</section>
+  --display: 'Fraunces', serif;
+  --body: 'Manrope', sans-serif;
+  --mono: 'IBM Plex Mono', monospace;
 
-<div class="dim-divider"><span class="tick"></span><span class="rule"></span><span class="label">How I work</span><span class="rule"></span><span class="tick"></span></div>
+  --max: 1180px;
+  --radius: 2px;
+}
 
-<section>
-  <div class="wrap">
-    <div class="section-head">
-      <p class="eyebrow">My Approach</p>
-      <h2>Three principles I don't compromise on.</h2>
-    </div>
-    <div class="grid-3">
-      <div class="card">
-        <p class="num">Principle</p>
-        <h3>Your budget is the boundary</h3>
-        <p>I won't push listings that stretch you beyond what's comfortable, even if it means a smaller deal for me.</p>
-      </div>
-      <div class="card">
-        <p class="num">Principle</p>
-        <h3>Numbers before feelings</h3>
-        <p>Falling in love with a house is easy. I make sure the loan math works before you do.</p>
-      </div>
-      <div class="card">
-        <p class="num">Principle</p>
-        <h3>I stay until handover</h3>
-        <p>My job isn't done at the offer letter — I follow through loan approval, paperwork, and key collection.</p>
-      </div>
-    </div>
-  </div>
-</section>
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:var(--body);
+  color:var(--text);
+  background:var(--parchment);
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+ul{list-style:none;}
+button{font-family:inherit;cursor:pointer;}
 
-<section class="band-forest">
-  <div class="wrap" style="text-align:center;">
-    <h2>Ready to find your home?</h2>
-    <p class="lede" style="margin:14px auto 0;">Tell me your budget and what you're looking for — I'll take it from there.</p>
-    <a href="contact.html" class="btn btn-primary" style="margin-top:24px;background:var(--brass);">Get in Touch</a>
-  </div>
-</section>
+.wrap{max-width:var(--max);margin:0 auto;padding:0 28px;}
 
-<footer>
-  <div class="wrap">
-    <div>
-      <p class="foot-brand">Swoon Properties</p>
-      <p style="margin-top:10px;max-width:32ch;">Buyer's agent service helping you find and finance your perfect home — one point of contact, start to finish.</p>
-    </div>
-    <div>
-      <h4>Explore</h4>
-      <ul>
-        <li><a href="about.html">About Me</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="listings-subsale.html">Subsale Listings</a></li>
-        <li><a href="listings-project.html">Project Listings</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4>Contact</h4>
-      <ul>
-        <li><a href="mailto:swoonproperty@gmail.com">swoonproperty@gmail.com</a></li>
-        <li><a href="tel:+60000000000">+60 00-000 0000</a></li>
-        <li><a href="contact.html">Send a Message →</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="foot-bottom">
-    <span>© 2026 Swoon Properties. All rights reserved.</span>
-    <span>Placeholder content — edit freely in the HTML files.</span>
-  </div>
-</footer>
-<script src="js/main.js"></script>
-</body>
-</html>
+h1,h2,h3,h4{font-family:var(--display);font-weight:500;color:var(--ink);line-height:1.15;letter-spacing:-0.01em;}
+h1{font-size:clamp(2.4rem,5vw,4rem);font-weight:400;}
+h2{font-size:clamp(1.7rem,3vw,2.5rem);}
+h3{font-size:1.3rem;}
+.eyebrow{
+  font-family:var(--mono);
+  font-size:0.72rem;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:var(--brass);
+}
+.lede{font-size:1.1rem;color:var(--text-soft);max-width:52ch;}
+
+/* focus visibility */
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{
+  outline:2px solid var(--brass);
+  outline-offset:3px;
+}
+@media (prefers-reduced-motion: reduce){
+  *{animation-duration:0.01ms !important;animation-iteration-count:1 !important;transition-duration:0.01ms !important;scroll-behavior:auto !important;}
+}
+
+/* =========================
+   BLUEPRINT DIMENSION-LINE DIVIDER — signature motif
+   used between sections, and as spec callouts for listings
+   ========================= */
+.dim-divider{
+  display:flex;align-items:center;gap:10px;
+  color:var(--text-soft);
+  margin:0 auto;
+  max-width:var(--max);
+  padding:0 28px;
+}
+.dim-divider .tick{width:1px;height:10px;background:var(--line);}
+.dim-divider .rule{flex:1;height:1px;background:var(--line);position:relative;}
+.dim-divider .label{
+  font-family:var(--mono);font-size:0.7rem;letter-spacing:0.08em;
+  text-transform:uppercase;color:var(--text-soft);white-space:nowrap;
+}
+
+/* =========================
+   HEADER / NAV
+   ========================= */
+header.site{
+  position:sticky;top:0;z-index:50;
+  background:rgba(243,239,230,0.92);
+  backdrop-filter:blur(6px);
+  border-bottom:1px solid var(--line);
+}
+.nav-row{display:flex;align-items:center;justify-content:space-between;padding:16px 28px;max-width:var(--max);margin:0 auto;}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--display);font-size:1.25rem;color:var(--ink);}
+.brand .mark{width:30px;height:30px;flex:none;}
+.brand small{display:block;font-family:var(--mono);font-size:0.6rem;letter-spacing:0.12em;color:var(--brass);text-transform:uppercase;margin-top:1px;}
+nav.links{display:flex;gap:28px;align-items:center;}
+nav.links a{font-size:0.92rem;color:var(--text);position:relative;padding:4px 0;}
+nav.links a.active,nav.links a:hover{color:var(--forest);}
+nav.links a.active::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:2px;background:var(--brass);}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:var(--body);font-weight:600;font-size:0.9rem;
+  padding:12px 22px;border-radius:var(--radius);border:1px solid transparent;
+  transition:transform .15s ease, background .15s ease;
+}
+.btn-primary{background:var(--forest);color:var(--white);}
+.btn-primary:hover{background:var(--ink);transform:translateY(-1px);}
+.btn-ghost{border-color:var(--ink);color:var(--ink);}
+.btn-ghost:hover{background:var(--ink);color:var(--white);}
+.nav-cta{display:flex;gap:12px;align-items:center;}
+.menu-toggle{display:none;background:none;border:none;font-size:1.5rem;color:var(--ink);}
+
+@media (max-width:860px){
+  nav.links{position:fixed;inset:64px 0 0 0;background:var(--parchment);flex-direction:column;
+    padding:32px 28px;gap:22px;transform:translateX(100%);transition:transform .25s ease;overflow-y:auto;}
+  nav.links.open{transform:translateX(0);}
+  .menu-toggle{display:block;}
+  .nav-cta .btn-ghost{display:none;}
+}
+
+/* =========================
+   HERO
+   ========================= */
+.hero{
+  background:var(--ink);
+  color:var(--parchment);
+  padding:72px 0 60px;
+  position:relative;
+  overflow:hidden;
+}
+.hero .wrap{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center;}
+.hero .eyebrow{color:var(--brass-light);}
+.hero h1{color:var(--white);font-weight:400;}
+.hero h1 em{font-style:italic;color:var(--brass-light);}
+.hero p.lede{color:#C9D2CB;}
+.hero-cta{display:flex;gap:14px;margin-top:28px;flex-wrap:wrap;}
+.hero .btn-ghost{border-color:#4C6157;color:var(--parchment);}
+.hero .btn-ghost:hover{background:var(--parchment);color:var(--ink);}
+.blueprint-art{width:100%;height:auto;}
+.blueprint-art .plan-line{fill:none;stroke:#4C6157;stroke-width:1;}
+.blueprint-art .plan-line.accent{stroke:var(--brass-light);}
+.blueprint-art text{font-family:var(--mono);font-size:9px;fill:#8FA096;letter-spacing:0.05em;}
+
+@media (max-width:860px){
+  .hero .wrap{grid-template-columns:1fr;}
+  .hero{padding:48px 0 40px;}
+}
+
+/* =========================
+   SECTIONS
+   ========================= */
+section{padding:64px 0;}
+section.tight{padding:44px 0;}
+.section-head{max-width:640px;margin-bottom:40px;}
+.section-head h2{margin-top:8px;}
+
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;}
+@media (max-width:860px){.grid-3,.grid-2{grid-template-columns:1fr;}}
+
+.card{
+  background:var(--white);
+  border:1px solid var(--line);
+  padding:30px 26px;
+  border-radius:var(--radius);
+}
+.card .num{font-family:var(--mono);color:var(--brass);font-size:0.8rem;letter-spacing:0.08em;}
+.card h3{margin:14px 0 10px;}
+.card p{color:var(--text-soft);font-size:0.95rem;}
+
+.stat-row{display:flex;gap:48px;flex-wrap:wrap;margin-top:36px;}
+.stat{font-family:var(--mono);}
+.stat .n{font-family:var(--display);font-size:2.1rem;color:var(--ink);display:block;}
+.stat .l{font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-soft);}
+
+/* alt bg band */
+.band{background:var(--parchment-dim);}
+.band-forest{background:var(--forest);color:var(--white);}
+.band-forest h2, .band-forest .eyebrow{color:var(--white);}
+.band-forest .eyebrow{color:var(--brass-light);}
+.band-forest p{color:#D3DED7;}
+
+/* =========================
+   LISTINGS
+   ========================= */
+.filter-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:34px;}
+.filter-row button{
+  font-family:var(--mono);font-size:0.75rem;letter-spacing:0.05em;text-transform:uppercase;
+  padding:9px 16px;border:1px solid var(--line);background:var(--white);color:var(--text-soft);border-radius:var(--radius);
+}
+.filter-row button.active{background:var(--forest);border-color:var(--forest);color:var(--white);}
+
+.listing-card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;}
+.listing-photo{aspect-ratio:4/3;background:linear-gradient(135deg,var(--parchment-dim),var(--line));position:relative;}
+.listing-tag{
+  position:absolute;top:12px;left:12px;
+  background:var(--brick);color:var(--white);
+  font-family:var(--mono);font-size:0.65rem;letter-spacing:0.06em;text-transform:uppercase;
+  padding:5px 10px;border-radius:var(--radius);
+}
+.listing-body{padding:20px 22px 24px;}
+.listing-price{font-family:var(--display);font-size:1.4rem;color:var(--ink);}
+.listing-loc{color:var(--text-soft);font-size:0.9rem;margin-top:2px;}
+.listing-specs{display:flex;gap:16px;margin-top:16px;padding-top:16px;border-top:1px solid var(--line);}
+.listing-specs span{font-family:var(--mono);font-size:0.78rem;color:var(--text-soft);}
+.listing-specs b{color:var(--ink);font-weight:600;}
+
+/* =========================
+   CALCULATOR
+   ========================= */
+.calc{
+  background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
+  padding:36px;display:grid;grid-template-columns:1fr 1fr;gap:40px;
+}
+@media (max-width:860px){.calc{grid-template-columns:1fr;padding:26px;}}
+.field{margin-bottom:20px;}
+.field label{display:block;font-family:var(--mono);font-size:0.72rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--text-soft);margin-bottom:8px;}
+.field input[type=range]{width:100%;accent-color:var(--brass);}
+.field-value{font-family:var(--mono);color:var(--ink);font-weight:500;}
+.field input[type=number], .field input[type=text], .field input[type=email], .field input[type=tel], .field select, .field textarea{
+  width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:var(--radius);
+  font-family:var(--mono);font-size:0.95rem;background:var(--parchment);color:var(--ink);
+}
+.field textarea{font-family:var(--body);resize:vertical;min-height:110px;}
+.calc-result{background:var(--ink);color:var(--white);padding:28px;border-radius:var(--radius);}
+.calc-result .n{font-family:var(--display);font-size:2.4rem;color:var(--brass-light);}
+.calc-result .l{font-family:var(--mono);font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;color:#9FB0A6;}
+.calc-breakdown{margin-top:20px;padding-top:16px;border-top:1px solid #33473C;font-family:var(--mono);font-size:0.85rem;}
+.calc-breakdown div{display:flex;justify-content:space-between;padding:5px 0;color:#C9D2CB;}
+
+/* =========================
+   FORMS
+   ========================= */
+form.contact-form{max-width:620px;}
+.form-note{font-family:var(--mono);font-size:0.78rem;color:var(--text-soft);margin-top:6px;}
+
+/* =========================
+   FOOTER
+   ========================= */
+footer{background:var(--ink);color:#B9C4BC;padding:52px 0 28px;}
+footer .wrap{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;}
+footer h4{color:var(--white);font-size:1rem;margin-bottom:14px;}
+footer a{color:#B9C4BC;font-size:0.92rem;}
+footer a:hover{color:var(--brass-light);}
+footer .foot-brand{font-family:var(--display);font-size:1.2rem;color:var(--white);}
+footer ul li{margin-bottom:9px;}
+.foot-bottom{max-width:var(--max);margin:36px auto 0;padding:20px 28px 0;border-top:1px solid #2A3A31;font-family:var(--mono);font-size:0.72rem;color:#8FA096;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+
+/* =========================
+   MISC
+   ========================= */
+.badge{
+  display:inline-block;font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;
+  background:var(--parchment-dim);border:1px solid var(--line);padding:5px 10px;border-radius:var(--radius);color:var(--text-soft);
+}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
+@media (max-width:860px){.two-col{grid-template-columns:1fr;}}
+.photo-placeholder{
+  aspect-ratio:4/5;background:linear-gradient(150deg,var(--parchment-dim),var(--line));
+  border:1px solid var(--line);display:flex;align-items:center;justify-content:center;
+  font-family:var(--mono);font-size:0.75rem;color:var(--text-soft);text-align:center;padding:20px;
+}

@@ -1,218 +1,112 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Swoon Properties — Buyer's Agent | Find Your Perfect Home</title>
-<meta name="description" content="Swoon Properties is a dedicated buyer's agent service — home search, loan calculation, and end-to-end support to help you find and finance your perfect home.">
-<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-<link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
+// ---------- Mobile nav ----------
+document.addEventListener('DOMContentLoaded', () => {
+  const toggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('nav.links');
+  if (toggle && nav) {
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('open');
+      toggle.textContent = nav.classList.contains('open') ? '✕' : '☰';
+    });
+    nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      nav.classList.remove('open');
+      toggle.textContent = '☰';
+    }));
+  }
 
-<header class="site">
-  <div class="nav-row">
-    <a href="index.html" class="brand">
-      <svg class="mark" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg">
-        <path d="M28 8 L44 14 L44 28 C44 38 36 45 28 48 C20 45 12 38 12 28 L12 14 Z" fill="#2C4A3B"/>
-        <text x="28" y="34" text-anchor="middle" font-family="Fraunces,Georgia,serif" font-size="19" font-weight="600" fill="#F3EFE6">S</text>
-      </svg>
-      <span>Swoon Properties<small>Buyer's Agent</small></span>
-    </a>
-    <nav class="links">
-      <a href="index.html" class="active">Home</a>
-      <a href="about.html">About Me</a>
-      <a href="services.html">Services</a>
-      <a href="listings-subsale.html">Subsale Listings</a>
-      <a href="listings-project.html">Project Listings</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-    <div class="nav-cta">
-      <a href="contact.html" class="btn btn-primary">Talk to Me</a>
-      <button class="menu-toggle" aria-label="Toggle menu">☰</button>
-    </div>
-  </div>
-</header>
+  initCalculator();
+  initListingFilters();
+  initContactForm();
+});
 
-<section class="hero">
-  <div class="wrap">
-    <div>
-      <p class="eyebrow">Buyer's Agent · One Home, One Journey</p>
-      <h1>I find the home that fits <em>your</em> life — then help you afford it.</h1>
-      <p class="lede">Full-service buyer representation: property search, loan calculation, financing guidance, and negotiation — all under one roof, at no extra cost to you as the buyer.</p>
-      <div class="hero-cta">
-        <a href="contact.html" class="btn btn-primary">Start My Home Search</a>
-        <a href="services.html" class="btn btn-ghost">See How It Works</a>
-      </div>
-    </div>
-    <div>
-      <svg class="blueprint-art" viewBox="0 0 420 340" xmlns="http://www.w3.org/2000/svg">
-        <!-- simple architectural floor-plan line drawing -->
-        <rect class="plan-line" x="40" y="40" width="340" height="260"/>
-        <line class="plan-line" x1="40" y1="150" x2="230" y2="150"/>
-        <line class="plan-line" x1="230" y1="40" x2="230" y2="300"/>
-        <line class="plan-line" x1="230" y1="220" x2="380" y2="220"/>
-        <path class="plan-line accent" d="M40 150 A40 40 0 0 0 80 190" />
-        <path class="plan-line" d="M230 220 A36 36 0 0 0 266 256" />
-        <line class="plan-line" x1="20" y1="40" x2="20" y2="300"/>
-        <line class="plan-line" x1="15" y1="40" x2="25" y2="40"/>
-        <line class="plan-line" x1="15" y1="300" x2="25" y2="300"/>
-        <text x="0" y="172" transform="rotate(-90 8,172)">42' - 0"</text>
-        <line class="plan-line" x1="40" y1="320" x2="380" y2="320"/>
-        <line class="plan-line" x1="40" y1="315" x2="40" y2="325"/>
-        <line class="plan-line" x1="380" y1="315" x2="380" y2="325"/>
-        <text x="170" y="335">64' - 0"</text>
-        <text x="55" y="100">MASTER BEDROOM</text>
-        <text x="250" y="100">LIVING</text>
-        <text x="250" y="200">KITCHEN</text>
-        <circle class="plan-line accent" cx="335" cy="70" r="3"/>
-        <text x="345" y="73">YOU ARE HERE</text>
-      </svg>
-    </div>
-  </div>
-</section>
+// ---------- Loan / mortgage calculator ----------
+function initCalculator() {
+  const priceEl = document.getElementById('calc-price');
+  const downEl = document.getElementById('calc-down');
+  const rateEl = document.getElementById('calc-rate');
+  const yearsEl = document.getElementById('calc-years');
+  if (!priceEl) return; // calculator not on this page
 
-<div class="dim-divider" style="margin-top:56px;">
-  <span class="tick"></span><span class="rule"></span>
-  <span class="label">Why work with a buyer's agent</span>
-  <span class="rule"></span><span class="tick"></span>
-</div>
+  const priceOut = document.getElementById('calc-price-out');
+  const downOut = document.getElementById('calc-down-out');
+  const rateOut = document.getElementById('calc-rate-out');
+  const yearsOut = document.getElementById('calc-years-out');
 
-<section>
-  <div class="wrap">
-    <div class="section-head">
-      <p class="eyebrow">What I Bring</p>
-      <h2>One point of contact, from first search to signing.</h2>
-      <p class="lede">Most buyers juggle a bank, a lawyer, and multiple agents on their own. I coordinate the whole journey so you don't have to.</p>
-    </div>
-    <div class="grid-3">
-      <div class="card">
-        <p class="num">01</p>
-        <h3>Home Search, Tailored</h3>
-        <p>Tell me your budget and must-haves. I'll shortlist matching listings — including ones not on my public page — and arrange viewings around your schedule.</p>
-      </div>
-      <div class="card">
-        <p class="num">02</p>
-        <h3>Loan &amp; Affordability</h3>
-        <p>Use the loan calculator to estimate your monthly commitment, or let me help you understand your DSR and bank eligibility before you commit.</p>
-      </div>
-      <div class="card">
-        <p class="num">03</p>
-        <h3>1-Stop Through to Keys</h3>
-        <p>Negotiation, paperwork, loan submission, lawyer coordination — I stay with you through to loan approval and handover.</p>
-      </div>
-    </div>
-  </div>
-</section>
+  const monthlyOut = document.getElementById('calc-monthly');
+  const loanOut = document.getElementById('calc-loan-amount');
+  const totalInterestOut = document.getElementById('calc-total-interest');
+  const totalPaidOut = document.getElementById('calc-total-paid');
 
-<section class="band">
-  <div class="wrap">
-    <div class="section-head">
-      <p class="eyebrow">Current Listings</p>
-      <h2>A few homes on my desk right now.</h2>
-      <p class="lede">Not seeing your fit? That's normal — most of what I do is off-market search based on your exact criteria.</p>
-    </div>
-    <div class="grid-3">
+  function fmt(n) {
+    return 'RM ' + Math.round(n).toLocaleString('en-MY');
+  }
 
-      <div class="listing-card">
-        <div class="listing-photo"><span class="listing-tag">Subsale</span></div>
-        <div class="listing-body">
-          <div class="listing-price">RM 580,000</div>
-          <div class="listing-loc">Taman Desa, Kuala Lumpur</div>
-          <div class="listing-specs">
-            <span><b>3</b> bed</span><span><b>2</b> bath</span><span><b>1,250</b> sqft</span>
-          </div>
-        </div>
-      </div>
+  function recalc() {
+    const price = Number(priceEl.value);
+    const downPct = Number(downEl.value);
+    const rate = Number(rateEl.value);
+    const years = Number(yearsEl.value);
 
-      <div class="listing-card">
-        <div class="listing-photo"><span class="listing-tag">New Project</span></div>
-        <div class="listing-body">
-          <div class="listing-price">From RM 420,000</div>
-          <div class="listing-loc">Rawang, Selangor</div>
-          <div class="listing-specs">
-            <span><b>3</b> bed</span><span><b>2</b> bath</span><span><b>980</b> sqft</span>
-          </div>
-        </div>
-      </div>
+    priceOut.textContent = fmt(price);
+    downOut.textContent = downPct + '%';
+    rateOut.textContent = rate.toFixed(2) + '%';
+    yearsOut.textContent = years + ' yrs';
 
-      <div class="listing-card">
-        <div class="listing-photo"><span class="listing-tag">Subsale</span></div>
-        <div class="listing-body">
-          <div class="listing-price">RM 750,000</div>
-          <div class="listing-loc">Kepong, Kuala Lumpur</div>
-          <div class="listing-specs">
-            <span><b>4</b> bed</span><span><b>3</b> bath</span><span><b>1,680</b> sqft</span>
-          </div>
-        </div>
-      </div>
+    const downAmount = price * (downPct / 100);
+    const loanAmount = price - downAmount;
+    const monthlyRate = (rate / 100) / 12;
+    const n = years * 12;
 
-    </div>
-    <div style="margin-top:32px;display:flex;gap:14px;flex-wrap:wrap;">
-      <a href="listings-subsale.html" class="btn btn-ghost">View Subsale Listings</a>
-      <a href="listings-project.html" class="btn btn-ghost">View Project Listings</a>
-    </div>
-  </div>
-</section>
+    let monthly;
+    if (monthlyRate === 0) {
+      monthly = loanAmount / n;
+    } else {
+      monthly = loanAmount * (monthlyRate * Math.pow(1 + monthlyRate, n)) / (Math.pow(1 + monthlyRate, n) - 1);
+    }
+    const totalPaid = monthly * n;
+    const totalInterest = totalPaid - loanAmount;
 
-<section class="band-forest">
-  <div class="wrap">
-    <div class="section-head">
-      <p class="eyebrow">Track Record</p>
-      <h2>Numbers I stand behind.</h2>
-    </div>
-    <div class="stat-row">
-      <div class="stat"><span class="n">40+</span><span class="l">Families Housed</span></div>
-      <div class="stat"><span class="n">RM 25M+</span><span class="l">Transactions Guided</span></div>
-      <div class="stat"><span class="n">3–6 wks</span><span class="l">Avg. Search to Offer</span></div>
-      <div class="stat"><span class="n">0%</span><span class="l">Extra Cost to Buyers</span></div>
-    </div>
-  </div>
-</section>
+    monthlyOut.textContent = fmt(monthly);
+    loanOut.textContent = fmt(loanAmount);
+    totalInterestOut.textContent = fmt(totalInterest);
+    totalPaidOut.textContent = fmt(totalPaid);
+  }
 
-<section>
-  <div class="wrap two-col">
-    <a href="about.html" style="border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);display:block;">
-      <img src="assets/agent-photo.jpg" alt="Portrait of the Swoon Properties buyer's agent" style="aspect-ratio:2/3;object-fit:cover;">
-    </a>
-    <div>
-      <p class="eyebrow">Who You're Working With</p>
-      <h2>A real person, on your side, from day one.</h2>
-      <p class="lede">No call centers, no rotating agents — you deal with me directly, from your first question to the day you get your keys.</p>
-      <a href="about.html" class="btn btn-primary" style="margin-top:24px;">Read My Story</a>
-    </div>
-  </div>
-</section>
+  [priceEl, downEl, rateEl, yearsEl].forEach(el => el.addEventListener('input', recalc));
+  recalc();
+}
 
-<footer>
-  <div class="wrap">
-    <div>
-      <p class="foot-brand">Swoon Properties</p>
-      <p style="margin-top:10px;max-width:32ch;">Buyer's agent service helping you find and finance your perfect home — one point of contact, start to finish.</p>
-    </div>
-    <div>
-      <h4>Explore</h4>
-      <ul>
-        <li><a href="about.html">About Me</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="listings-subsale.html">Subsale Listings</a></li>
-        <li><a href="listings-project.html">Project Listings</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4>Contact</h4>
-      <ul>
-        <li><a href="mailto:swoonproperty@gmail.com">swoonproperty@gmail.com</a></li>
-        <li><a href="tel:+60000000000">+60 00-000 0000</a></li>
-        <li><a href="contact.html">Send a Message →</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="foot-bottom">
-    <span>© 2026 Swoon Properties. All rights reserved.</span>
-    <span>Placeholder content — edit freely in the HTML files.</span>
-  </div>
-</footer>
-<script src="js/main.js"></script>
-</body>
-</html>
+// ---------- Listing filters (subsale / project pages) ----------
+function initListingFilters() {
+  const buttons = document.querySelectorAll('.filter-row button');
+  const cards = document.querySelectorAll('[data-type]');
+  if (!buttons.length || !cards.length) return;
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      cards.forEach(card => {
+        card.style.display = (filter === 'all' || card.dataset.type === filter) ? '' : 'none';
+      });
+    });
+  });
+}
+
+// ---------- Contact form (placeholder submit handling) ----------
+function initContactForm() {
+  const form = document.querySelector('form.contact-form');
+  if (!form) return;
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const status = document.getElementById('form-status');
+    // NOTE: this is a placeholder. To actually receive messages, connect this
+    // form to a free service like Formspree, Google Forms, or Netlify Forms.
+    // See the README for setup steps.
+    if (status) {
+      status.textContent = 'Thanks — this is a demo form. Connect it to Formspree/Netlify Forms (see README) so messages reach your inbox.';
+      status.style.color = '#A9793C';
+    }
+    form.reset();
+  });
+}
