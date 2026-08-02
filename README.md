@@ -1,201 +1,82 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Swoon Properties — Buyer's Agent | Find Your Perfect Home</title>
-<meta name="description" content="Swoon Properties is a dedicated buyer's agent service — home search, loan calculation, and end-to-end support to help you find and finance your perfect home.">
-<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-<link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
+# Swoon Properties — Website
 
-<header class="site">
-  <div class="nav-row">
-    <a href="index.html" class="brand">
-      <svg class="mark" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg">
-        <path d="M28 8 L44 14 L44 28 C44 38 36 45 28 48 C20 45 12 38 12 28 L12 14 Z" fill="#2C4A3B"/>
-        <text x="28" y="34" text-anchor="middle" font-family="Fraunces,Georgia,serif" font-size="19" font-weight="600" fill="#F3EFE6">S</text>
-      </svg>
-      <span>Swoon Properties<small>Buyer's Agent</small></span>
-    </a>
-    <nav class="links">
-      <a href="index.html" class="active">Home</a>
-      <a href="about.html">About Me</a>
-      <a href="services.html">Services</a>
-      <a href="listings-subsale.html">Subsale Listings</a>
-      <a href="listings-project.html">Project Listings</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-    <div class="nav-cta">
-      <a href="contact.html" class="btn btn-primary">Talk to Me</a>
-      <button class="menu-toggle" aria-label="Toggle menu">☰</button>
-    </div>
-  </div>
-</header>
+A free, self-hosted website for your buyer's agent business. No page builder, no monthly fee — just files you fully own.
 
-<section class="hero">
-  <div class="wrap">
-    <div>
-      <p class="eyebrow">Buyer's Agent · On Your Side Only</p>
-      <h1>Every deal has two sides. I make sure someone's fully on <em>yours</em>.</h1>
-      <p class="lede">Most agents represent both the buyer and the seller — and when it counts, they tend to lean toward whoever pays more. I represent buyers only. Think of me as your own lawyer in the deal: on your side from first search to signing.</p>
-      <div class="hero-cta">
-        <a href="contact.html" class="btn btn-primary">Start My Home Search</a>
-        <a href="services.html" class="btn btn-ghost">See How It Works</a>
-      </div>
-    </div>
-    <div style="display:flex;flex-direction:column;align-items:center;">
-      <svg width="220" height="220" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <clipPath id="heroShield">
-            <path d="M110 30 L173 55 L173 110 C173 149 141 177 110 189 C79 177 47 149 47 110 L47 55 Z"/>
-          </clipPath>
-        </defs>
-        <image href="assets/agent-photo-square.jpg" width="220" height="220" preserveAspectRatio="xMidYMid slice" clip-path="url(#heroShield)"/>
-        <path d="M110 30 L173 55 L173 110 C173 149 141 177 110 189 C79 177 47 149 47 110 L47 55 Z" fill="none" stroke="#A9793C" stroke-width="3"/>
-      </svg>
-      <p class="eyebrow" style="margin-top:18px;color:#C9D2CB;">Your buyer's agent</p>
-    </div>
-  </div>
-</section>
+## What's inside
 
-<div class="dim-divider" style="margin-top:56px;">
-  <span class="tick"></span><span class="rule"></span>
-  <span class="label">Why work with a buyer's agent</span>
-  <span class="rule"></span><span class="tick"></span>
-</div>
+```
+index.html                 Home page
+about.html                 About Me
+services.html              Services + interactive loan calculator
+listings-subsale.html      Subsale listings (filterable)
+listings-project.html      New project listings (filterable)
+contact.html                Contact form + direct contact info
+css/styles.css             All styling (colors, fonts, layout)
+js/main.js                 Nav menu, loan calculator, filters, form handling
+```
 
-<section>
-  <div class="wrap">
-    <div class="section-head">
-      <p class="eyebrow">What I Bring</p>
-      <h2>One point of contact, from first search to signing.</h2>
-      <p class="lede">Most buyers juggle a bank, a lawyer, and multiple agents on their own. I coordinate the whole journey so you don't have to.</p>
-    </div>
-    <div class="grid-3">
-      <div class="card">
-        <p class="num">01</p>
-        <h3>Only Your Interests</h3>
-        <p>Unlike agents who represent both sides of a deal, I work exclusively for buyers — like having your own lawyer at the table, not one shared with the seller.</p>
-      </div>
-      <div class="card">
-        <p class="num">02</p>
-        <h3>Home Search, Tailored</h3>
-        <p>Tell me your budget and must-haves. I'll shortlist matching listings — including ones not on my public page — and arrange viewings around your schedule.</p>
-      </div>
-      <div class="card">
-        <p class="num">03</p>
-        <h3>Loan &amp; Affordability</h3>
-        <p>Use the loan calculator to estimate your monthly commitment, or let me help you understand your DSR and bank eligibility before you commit.</p>
-      </div>
-    </div>
-  </div>
-</section>
+Everything is placeholder content — sample prices, sample copy, gray photo boxes. Nothing here needs to break if you edit it: it's plain HTML, so any text between tags is safe to change.
 
-<section class="band">
-  <div class="wrap">
-    <div class="section-head">
-      <p class="eyebrow">Current Listings</p>
-      <h2>A few homes on my desk right now.</h2>
-      <p class="lede">Not seeing your fit? That's normal — most of what I do is off-market search based on your exact criteria.</p>
-    </div>
-    <div class="grid-3">
+## 1. Publish it for free with GitHub Pages
 
-      <div class="listing-card">
-        <div class="listing-photo"><span class="listing-tag">Subsale</span></div>
-        <div class="listing-body">
-          <div class="listing-price">RM 580,000</div>
-          <div class="listing-loc">Taman Desa, Kuala Lumpur</div>
-          <div class="listing-specs">
-            <span><b>3</b> bed</span><span><b>2</b> bath</span><span><b>1,250</b> sqft</span>
-          </div>
-        </div>
-      </div>
+1. Create a free GitHub account at github.com if you don't have one (use swoonproperty@gmail.com).
+2. Create a new repository named exactly `swoonproperties` (or anything you like — the name becomes part of your URL if it's not `<username>.github.io`).
+   - **Tip:** if you name the repo `<your-username>.github.io`, your site will live at `https://<your-username>.github.io` with no extra folder in the URL.
+3. Upload all the files in this folder (keep the `css/` and `js/` folders intact) — either by dragging them into the GitHub web interface ("Add file" → "Upload files") or via `git push` if you're comfortable with Git.
+4. In the repository, go to **Settings → Pages**, set the source branch to `main` and folder to `/ (root)`, then save.
+5. Wait 1–2 minutes — GitHub will give you a live URL like `https://yourusername.github.io/swoonproperties/`.
 
-      <div class="listing-card">
-        <div class="listing-photo"><span class="listing-tag">New Project</span></div>
-        <div class="listing-body">
-          <div class="listing-price">From RM 420,000</div>
-          <div class="listing-loc">Rawang, Selangor</div>
-          <div class="listing-specs">
-            <span><b>3</b> bed</span><span><b>2</b> bath</span><span><b>980</b> sqft</span>
-          </div>
-        </div>
-      </div>
+That's it — free hosting, no ads, HTTPS included.
 
-      <div class="listing-card">
-        <div class="listing-photo"><span class="listing-tag">Subsale</span></div>
-        <div class="listing-body">
-          <div class="listing-price">RM 750,000</div>
-          <div class="listing-loc">Kepong, Kuala Lumpur</div>
-          <div class="listing-specs">
-            <span><b>4</b> bed</span><span><b>3</b> bath</span><span><b>1,680</b> sqft</span>
-          </div>
-        </div>
-      </div>
+### Custom domain (optional, paid)
+If you later want `swoonproperties.com` instead of the github.io address, buy the domain (~USD 10–15/year from Namecheap, GoDaddy, etc.) and point it at GitHub Pages — GitHub's docs walk through the DNS steps under Settings → Pages → Custom domain.
 
-    </div>
-    <div style="margin-top:32px;display:flex;gap:14px;flex-wrap:wrap;">
-      <a href="listings-subsale.html" class="btn btn-ghost">View Subsale Listings</a>
-      <a href="listings-project.html" class="btn btn-ghost">View Project Listings</a>
-    </div>
-  </div>
-</section>
+## 2. Add your real photos and videos
 
-<section class="band-forest">
-  <div class="wrap">
-    <div class="section-head">
-      <p class="eyebrow">Track Record</p>
-      <h2>Numbers I stand behind.</h2>
-    </div>
-    <div class="stat-row">
-      <div class="stat"><span class="n">40+</span><span class="l">Families Housed</span></div>
-      <div class="stat"><span class="n">RM 25M+</span><span class="l">Transactions Guided</span></div>
-      <div class="stat"><span class="n">3–6 wks</span><span class="l">Avg. Search to Offer</span></div>
-      <div class="stat"><span class="n">0%</span><span class="l">Extra Cost to Buyers</span></div>
-    </div>
-  </div>
-</section>
+Every gray box with dashed-looking text (e.g. "Replace with your business photo") is a placeholder `<div class="photo-placeholder">`. To swap in a real image:
 
-<section>
-  <div class="wrap" style="text-align:center;max-width:680px;">
-    <p class="eyebrow">The Difference</p>
-    <h2>A vendor has their own lawyer. So should you.</h2>
-    <p class="lede" style="margin:14px auto 0;">In most deals, one agent quietly represents both sides — and leans toward whoever pays the bigger commission. I only take buyer clients, so there's never a conflict of interest in whose corner I'm fighting for.</p>
-    <a href="about.html" class="btn btn-primary" style="margin-top:24px;">Read My Story</a>
-  </div>
-</section>
+```html
+<!-- Replace this: -->
+<div class="photo-placeholder">Replace with your business photo</div>
 
-<footer>
-  <div class="wrap">
-    <div>
-      <p class="foot-brand">Swoon Properties</p>
-      <p style="margin-top:10px;max-width:32ch;">Buyer's agent service helping you find and finance your perfect home — one point of contact, start to finish.</p>
-    </div>
-    <div>
-      <h4>Explore</h4>
-      <ul>
-        <li><a href="about.html">About Me</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="listings-subsale.html">Subsale Listings</a></li>
-        <li><a href="listings-project.html">Project Listings</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4>Contact</h4>
-      <ul>
-        <li><a href="mailto:swoonproperty@gmail.com">swoonproperty@gmail.com</a></li>
-        <li><a href="tel:+60000000000">+60 00-000 0000</a></li>
-        <li><a href="contact.html">Send a Message →</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="foot-bottom">
-    <span>© 2026 Swoon Properties. All rights reserved.</span>
-    <span>Placeholder content — edit freely in the HTML files.</span>
-  </div>
-</footer>
-<script src="js/main.js"></script>
-</body>
-</html>
+<!-- With this: -->
+<img src="assets/your-photo.jpg" alt="Your name, buyer's agent">
+```
+
+Put your image files in the `assets/` folder, then reference them as `assets/filename.jpg`.
+
+For listing photos, replace the `<div class="listing-photo">...</div>` blocks the same way — an `<img>` tag inside instead of an empty div. For video, you can embed a YouTube/Vimeo link (upload the video there for free, unlisted if you like) using an `<iframe>`, which is far lighter than hosting video files yourself.
+
+## 3. Make the contact form actually send you messages
+
+Right now the form shows a message but doesn't email you — plain HTML/CSS/JS can't send emails on its own. Easiest free fix:
+
+1. Sign up free at **formspree.io** (50 free submissions/month).
+2. Create a form, get your form endpoint URL (looks like `https://formspree.io/f/xxxxxxx`).
+3. In `contact.html`, change:
+   ```html
+   <form class="contact-form">
+   ```
+   to:
+   ```html
+   <form class="contact-form" action="https://formspree.io/f/xxxxxxx" method="POST">
+   ```
+4. Remove the `e.preventDefault()` line in `js/main.js` inside `initContactForm()` (or just delete that whole function) so the form submits normally to Formspree.
+
+Alternative: if you host on Netlify instead of GitHub Pages, Netlify Forms works with zero setup — just add `data-netlify="true"` to the `<form>` tag.
+
+## 4. Editing content
+
+Everything is plain text inside HTML tags — open any `.html` file in a text editor (even Notepad works, but VS Code is nicer and free) and edit between the tags. A few places worth updating first:
+
+- `about.html` — the two `[Edit this: ...]` paragraphs with your real story
+- Phone number — currently `+60 00-000 0000` in the footer and contact page, search-and-replace across all files
+- Listing cards — duplicate a `.listing-card` block in the listings pages to add more properties, or delete ones you don't need
+
+## 5. Colors & fonts
+
+All design tokens live at the top of `css/styles.css` under `:root`. Change `--brass`, `--forest`, etc. to adjust the palette globally without touching any HTML.
+
+---
+
+Questions or want me to add anything (e.g. a blog, testimonials section, WhatsApp click-to-chat button, more listings)? Just ask.

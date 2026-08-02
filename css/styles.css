@@ -142,6 +142,7 @@ nav.links a.active::after{content:"";position:absolute;left:0;right:0;bottom:-2p
 .hero-cta{display:flex;gap:14px;margin-top:28px;flex-wrap:wrap;}
 .hero .btn-ghost{border-color:#4C6157;color:var(--parchment);}
 .hero .btn-ghost:hover{background:var(--parchment);color:var(--ink);}
+#hero-photo{transition:opacity .08s linear, transform .08s linear; will-change:opacity, transform;}
 .blueprint-art{width:100%;height:auto;}
 .blueprint-art .plan-line{fill:none;stroke:#4C6157;stroke-width:1;}
 .blueprint-art .plan-line.accent{stroke:var(--brass-light);}

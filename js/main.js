@@ -16,7 +16,37 @@ document.addEventListener('DOMContentLoaded', () => {
   initCalculator();
   initListingFilters();
   initContactForm();
+  initHeroPhotoScroll();
 });
+
+// ---------- Hero photo scroll effect ----------
+// Fades and slides the hero photo out as the user scrolls past the hero.
+// Tied directly to scroll position (not a one-shot animation), so scrolling
+// back up naturally brings the photo back in — no extra logic needed.
+function initHeroPhotoScroll() {
+  const photo = document.getElementById('hero-photo');
+  const hero = document.querySelector('.hero');
+  if (!photo || !hero) return;
+
+  let ticking = false;
+
+  function update() {
+    const heroHeight = hero.offsetHeight;
+    const progress = Math.min(Math.max(window.scrollY / heroHeight, 0), 1);
+    photo.style.opacity = String(1 - progress);
+    photo.style.transform = `translateY(${progress * -60}px) scale(${1 - progress * 0.08})`;
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(update);
+      ticking = true;
+    }
+  }, { passive: true });
+
+  update();
+}
 
 // ---------- Loan / mortgage calculator ----------
 function initCalculator() {

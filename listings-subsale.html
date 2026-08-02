@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact — Swoon Properties</title>
-<meta name="description" content="Get in touch with Swoon Properties for buyer's agent services, home search, and loan guidance.">
+<title>Subsale Listings — Swoon Properties</title>
+<meta name="description" content="Current subsale property listings from Swoon Properties, your property specialist.">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -17,15 +17,15 @@
         <path d="M28 8 L44 14 L44 28 C44 38 36 45 28 48 C20 45 12 38 12 28 L12 14 Z" fill="#2C4A3B"/>
         <text x="28" y="34" text-anchor="middle" font-family="Fraunces,Georgia,serif" font-size="19" font-weight="600" fill="#F3EFE6">S</text>
       </svg>
-      <span>Swoon Properties<small>Buyer's Agent</small></span>
+      <span>Swoon Properties<small>Property Specialist</small></span>
     </a>
     <nav class="links">
       <a href="index.html">Home</a>
       <a href="about.html">About Me</a>
       <a href="services.html">Services</a>
-      <a href="listings-subsale.html">Subsale Listings</a>
-      <a href="listings-project.html">Project Listings</a>
-      <a href="contact.html" class="active">Contact</a>
+      <a href="listings-subsale.html" class="active">Subsale</a>
+      <a href="listings-project.html">New Project</a>
+      <a href="contact.html">Contact</a>
     </nav>
     <div class="nav-cta">
       <a href="contact.html" class="btn btn-primary">Talk to Me</a>
@@ -34,61 +34,81 @@
   </div>
 </header>
 
-<section class="hero" style="padding:56px 0 44px;">
+<section class="hero" style="padding:56px 0 40px;">
   <div class="wrap" style="grid-template-columns:1fr;max-width:760px;">
     <div>
-      <p class="eyebrow">Contact</p>
-      <h1>Tell me what you're looking for.</h1>
-      <p class="lede">Budget, location, must-haves — the more specific, the faster I can shortlist homes for you. I typically reply within 24 hours.</p>
+      <p class="eyebrow">Subsale Listings</p>
+      <h1>Existing homes, ready to move into.</h1>
+      <p class="lede">Every listing here is one I've personally vetted. Don't see your fit? I can search beyond this list for you.</p>
     </div>
   </div>
 </section>
 
-<section>
-  <div class="wrap two-col">
-    <div>
-      <form class="contact-form">
-        <div class="field">
-          <label for="name">Full Name</label>
-          <input type="text" id="name" name="name" required>
-        </div>
-        <div class="field">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required>
-        </div>
-        <div class="field">
-          <label for="phone">Phone / WhatsApp</label>
-          <input type="tel" id="phone" name="phone">
-        </div>
-        <div class="field">
-          <label for="budget">Budget Range</label>
-          <select id="budget" name="budget">
-            <option>Below RM 400,000</option>
-            <option>RM 400,000 – RM 600,000</option>
-            <option>RM 600,000 – RM 900,000</option>
-            <option>RM 900,000 – RM 1,500,000</option>
-            <option>Above RM 1,500,000</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="message">What are you looking for?</label>
-          <textarea id="message" name="message" placeholder="e.g. 3-bedroom landed home near Rawang, moving in within 6 months..."></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">Send Message</button>
-        <p class="form-note" id="form-status"></p>
-      </form>
+<section class="tight">
+  <div class="wrap">
+    <div class="filter-row">
+      <button class="active" data-filter="all">All</button>
+      <button data-filter="landed">Landed</button>
+      <button data-filter="condo">Condo / Apartment</button>
     </div>
 
-    <div>
-      <h3>Prefer to reach out directly?</h3>
-      <ul style="margin-top:20px;">
-        <li style="margin-bottom:14px;"><span class="badge">Email</span><br><a href="mailto:swoonproperty@gmail.com" style="font-size:1.1rem;color:var(--forest);">swoonproperty@gmail.com</a></li>
-        <li style="margin-bottom:14px;"><span class="badge">Phone / WhatsApp</span><br><a href="tel:+60000000000" style="font-size:1.1rem;color:var(--forest);">+60 00-000 0000</a></li>
-        <li style="margin-bottom:14px;"><span class="badge">Coverage Area</span><br><span style="font-size:1.1rem;">Klang Valley &amp; Selangor</span></li>
-      </ul>
-      <div class="dim-divider" style="margin:32px 0;padding:0;"><span class="tick"></span><span class="rule"></span><span class="label">Response time</span><span class="rule"></span><span class="tick"></span></div>
-      <p class="lede">I personally read and reply to every message — usually within 24 hours, often sooner.</p>
+    <div class="grid-3">
+
+      <div class="listing-card" data-type="landed">
+        <div class="listing-photo"><span class="listing-tag">Subsale</span></div>
+        <div class="listing-body">
+          <div class="listing-price">RM 580,000</div>
+          <div class="listing-loc">Taman Desa, Kuala Lumpur — Double-storey terrace</div>
+          <div class="listing-specs">
+            <span><b>3</b> bed</span><span><b>2</b> bath</span><span><b>1,250</b> sqft</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="listing-card" data-type="condo">
+        <div class="listing-photo"><span class="listing-tag">Subsale</span></div>
+        <div class="listing-body">
+          <div class="listing-price">RM 420,000</div>
+          <div class="listing-loc">Sentul, Kuala Lumpur — Condominium</div>
+          <div class="listing-specs">
+            <span><b>2</b> bed</span><span><b>2</b> bath</span><span><b>880</b> sqft</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="listing-card" data-type="landed">
+        <div class="listing-photo"><span class="listing-tag">Subsale</span></div>
+        <div class="listing-body">
+          <div class="listing-price">RM 750,000</div>
+          <div class="listing-loc">Kepong, Kuala Lumpur — Semi-detached</div>
+          <div class="listing-specs">
+            <span><b>4</b> bed</span><span><b>3</b> bath</span><span><b>1,680</b> sqft</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="listing-card" data-type="condo">
+        <div class="listing-photo"><span class="listing-tag">Subsale</span></div>
+        <div class="listing-body">
+          <div class="listing-price">RM 350,000</div>
+          <div class="listing-loc">Rawang, Selangor — Apartment</div>
+          <div class="listing-specs">
+            <span><b>3</b> bed</span><span><b>2</b> bath</span><span><b>950</b> sqft</span>
+          </div>
+        </div>
+      </div>
+
     </div>
+
+    <p class="form-note" style="margin-top:8px;">Sample listings shown for layout — replace photos, prices, and details with your actual inventory. Duplicate a <code>.listing-card</code> block to add more.</p>
+  </div>
+</section>
+
+<section class="band-forest">
+  <div class="wrap" style="text-align:center;">
+    <h2>None of these quite right?</h2>
+    <p class="lede" style="margin:14px auto 0;">Tell me your budget and criteria — I'll search beyond what's listed here.</p>
+    <a href="contact.html" class="btn btn-primary" style="margin-top:24px;background:var(--brass);">Request a Custom Search</a>
   </div>
 </section>
 
@@ -96,13 +116,15 @@
   <div class="wrap">
     <div>
       <p class="foot-brand">Swoon Properties</p>
-      <p style="margin-top:10px;max-width:32ch;">Buyer's agent service helping you find and finance your perfect home — one point of contact, start to finish.</p>
+      <p style="margin-top:10px;max-width:32ch;">Property specialist helping you find and finance your perfect home — one point of contact, start to finish.</p>
     </div>
     <div>
       <h4>Explore</h4>
       <ul>
         <li><a href="about.html">About Me</a></li>
         <li><a href="services.html">Services</a></li>
+        <li>
+</li>
         <li><a href="listings-subsale.html">Subsale Listings</a></li>
         <li><a href="listings-project.html">Project Listings</a></li>
       </ul>
@@ -111,11 +133,19 @@
       <h4>Contact</h4>
       <ul>
         <li><a href="mailto:swoonproperty@gmail.com">swoonproperty@gmail.com</a></li>
-        <li><a href="tel:+60000000000">+60 00-000 0000</a></li>
+        <li><a href="tel:+60176010180">+6017 601 0180</a></li>
         <li><a href="contact.html">Send a Message →</a></li>
+        <li><a href="https://instagram.com/swoonproperties" target="_blank" rel="noopener">Instagram: @swoonproperties</a></li>
+        <li><a href="https://facebook.com/SwoonEst" target="_blank" rel="noopener">Facebook: Swoon Est.</a></li>
       </ul>
     </div>
   </div>
+  <div class="wrap" style="margin-top:24px;">
+    <p style="font-size:0.72rem;color:#8FA096;max-width:760px;line-height:1.6;">
+      <strong style="color:#B9C4BC;">Disclaimer:</strong> Loan and affordability figures shown on this site, including the loan calculator, are indicative estimates only and do not constitute a loan offer, approval, or guarantee. Final eligibility, interest rates, and loan terms are determined solely by the relevant bank or financial institution. Swoon Properties acts as your buyer's agent and personal point of coordination throughout the transaction — including connecting you with law firms and other professionals as needed. Any legal advice or legal representation remains the responsibility of the appointed lawyer.
+    </p>
+  </div>
+
   <div class="foot-bottom">
     <span>© 2026 Swoon Properties. All rights reserved.</span>
     <span>Placeholder content — edit freely in the HTML files.</span>
