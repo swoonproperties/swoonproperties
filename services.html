@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services — Swoon Properties</title>
+<meta name="description" content="Buyer's agent services: tailored home search, loan calculation, financing guidance, and full support through to handover.">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="nav-row">
+    <a href="index.html" class="brand">
+      <svg class="mark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="12" cy="12" r="7.5" stroke="#A9793C" stroke-width="2"/>
+        <rect x="16.5" y="16.5" width="4" height="11" rx="1" transform="rotate(45 16.5 16.5)" fill="#A9793C"/>
+      </svg>
+      <span>Swoon Properties<small>Buyer's Agent</small></span>
+    </a>
+    <nav class="links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Me</a>
+      <a href="services.html" class="active">Services</a>
+      <a href="listings-subsale.html">Subsale Listings</a>
+      <a href="listings-project.html">Project Listings</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn btn-primary">Talk to Me</a>
+      <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<section class="hero" style="padding:56px 0 44px;">
+  <div class="wrap" style="grid-template-columns:1fr;max-width:760px;">
+    <div>
+      <p class="eyebrow">Services</p>
+      <h1>Everything a buyer needs. Nothing you have to chase.</h1>
+      <p class="lede">From your first budget conversation to the day you collect your keys — I coordinate the search, the numbers, and the paperwork.</p>
+    </div>
+  </div>
+</section>
+
+<div class="dim-divider" style="margin-top:48px;"><span class="tick"></span><span class="rule"></span><span class="label">The 1-stop service</span><span class="rule"></span><span class="tick"></span></div>
+
+<section>
+  <div class="wrap">
+    <div class="grid-3">
+      <div class="card">
+        <p class="num">01</p>
+        <h3>Tailored Home Search</h3>
+        <p>Share your budget, location, and must-haves. I search both my own listings and the wider market — including off-market opportunities — to shortlist homes that actually fit.</p>
+      </div>
+      <div class="card">
+        <p class="num">02</p>
+        <h3>Loan &amp; Affordability Planning</h3>
+        <p>I help you understand your borrowing power, estimate your DSR (debt service ratio), and work out a realistic monthly commitment before you make an offer.</p>
+      </div>
+      <div class="card">
+        <p class="num">03</p>
+        <h3>Bank Loan Submission Support</h3>
+        <p>I help prepare and submit your loan application to multiple banks, comparing offers so you get competitive rates and terms.</p>
+      </div>
+      <div class="card">
+        <p class="num">04</p>
+        <h3>Negotiation</h3>
+        <p>I negotiate price and terms on your behalf — my incentive is aligned with getting you the best deal, not the highest price.</p>
+      </div>
+      <div class="card">
+        <p class="num">05</p>
+        <h3>Paperwork &amp; Legal Coordination</h3>
+        <p>I liaise with lawyers and coordinate the Sale &amp; Purchase Agreement process so nothing falls through the cracks.</p>
+      </div>
+      <div class="card">
+        <p class="num">06</p>
+        <h3>Through to Handover</h3>
+        <p>From loan approval to key collection, I stay in the loop so you always know what's happening and what's next.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="calculator">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Loan Calculator</p>
+      <h2>Estimate your monthly commitment</h2>
+      <p class="lede">Adjust the sliders to match your target property. This is an estimate only — talk to me for an accurate bank-eligibility check based on your income.</p>
+    </div>
+
+    <div class="calc">
+      <div>
+        <div class="field">
+          <label>Property Price — <span class="field-value" id="calc-price-out">RM 500,000</span></label>
+          <input type="range" id="calc-price" min="150000" max="3000000" step="10000" value="500000">
+        </div>
+        <div class="field">
+          <label>Down Payment — <span class="field-value" id="calc-down-out">10%</span></label>
+          <input type="range" id="calc-down" min="0" max="50" step="1" value="10">
+        </div>
+        <div class="field">
+          <label>Interest Rate (p.a.) — <span class="field-value" id="calc-rate-out">4.00%</span></label>
+          <input type="range" id="calc-rate" min="2" max="8" step="0.05" value="4">
+        </div>
+        <div class="field">
+          <label>Loan Tenure — <span class="field-value" id="calc-years-out">30 yrs</span></label>
+          <input type="range" id="calc-years" min="5" max="35" step="1" value="30">
+        </div>
+      </div>
+
+      <div class="calc-result">
+        <p class="l">Estimated Monthly Installment</p>
+        <p class="n" id="calc-monthly">RM 0</p>
+        <div class="calc-breakdown">
+          <div><span>Loan Amount</span><span id="calc-loan-amount">RM 0</span></div>
+          <div><span>Total Interest</span><span id="calc-total-interest">RM 0</span></div>
+          <div><span>Total Repaid</span><span id="calc-total-paid">RM 0</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:28px;">
+      <a href="contact.html" class="btn btn-primary">Get a Real Eligibility Check</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap" style="text-align:center;max-width:640px;">
+    <p class="eyebrow">Not finding what you need in my listings?</p>
+    <h2>That's exactly what the custom search is for.</h2>
+    <p class="lede" style="margin:14px auto 0;">Most of what I do happens off my website — tell me your budget and criteria, and I'll go find it.</p>
+    <a href="contact.html" class="btn btn-primary" style="margin-top:24px;">Request a Custom Search</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <p class="foot-brand">Swoon Properties</p>
+      <p style="margin-top:10px;max-width:32ch;">Buyer's agent service helping you find and finance your perfect home — one point of contact, start to finish.</p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="listings-subsale.html">Subsale Listings</a></li>
+        <li><a href="listings-project.html">Project Listings</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="mailto:swoonproperty@gmail.com">swoonproperty@gmail.com</a></li>
+        <li><a href="tel:+60000000000">+60 00-000 0000</a></li>
+        <li><a href="contact.html">Send a Message →</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 Swoon Properties. All rights reserved.</span>
+    <span>Placeholder content — edit freely in the HTML files.</span>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

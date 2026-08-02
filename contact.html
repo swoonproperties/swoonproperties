@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Swoon Properties</title>
+<meta name="description" content="Get in touch with Swoon Properties for buyer's agent services, home search, and loan guidance.">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="nav-row">
+    <a href="index.html" class="brand">
+      <svg class="mark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="12" cy="12" r="7.5" stroke="#A9793C" stroke-width="2"/>
+        <rect x="16.5" y="16.5" width="4" height="11" rx="1" transform="rotate(45 16.5 16.5)" fill="#A9793C"/>
+      </svg>
+      <span>Swoon Properties<small>Buyer's Agent</small></span>
+    </a>
+    <nav class="links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Me</a>
+      <a href="services.html">Services</a>
+      <a href="listings-subsale.html">Subsale Listings</a>
+      <a href="listings-project.html">Project Listings</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn btn-primary">Talk to Me</a>
+      <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<section class="hero" style="padding:56px 0 44px;">
+  <div class="wrap" style="grid-template-columns:1fr;max-width:760px;">
+    <div>
+      <p class="eyebrow">Contact</p>
+      <h1>Tell me what you're looking for.</h1>
+      <p class="lede">Budget, location, must-haves — the more specific, the faster I can shortlist homes for you. I typically reply within 24 hours.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap two-col">
+    <div>
+      <form class="contact-form">
+        <div class="field">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="field">
+          <label for="phone">Phone / WhatsApp</label>
+          <input type="tel" id="phone" name="phone">
+        </div>
+        <div class="field">
+          <label for="budget">Budget Range</label>
+          <select id="budget" name="budget">
+            <option>Below RM 400,000</option>
+            <option>RM 400,000 – RM 600,000</option>
+            <option>RM 600,000 – RM 900,000</option>
+            <option>RM 900,000 – RM 1,500,000</option>
+            <option>Above RM 1,500,000</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="message">What are you looking for?</label>
+          <textarea id="message" name="message" placeholder="e.g. 3-bedroom landed home near Rawang, moving in within 6 months..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+        <p class="form-note" id="form-status"></p>
+      </form>
+    </div>
+
+    <div>
+      <h3>Prefer to reach out directly?</h3>
+      <ul style="margin-top:20px;">
+        <li style="margin-bottom:14px;"><span class="badge">Email</span><br><a href="mailto:swoonproperty@gmail.com" style="font-size:1.1rem;color:var(--forest);">swoonproperty@gmail.com</a></li>
+        <li style="margin-bottom:14px;"><span class="badge">Phone / WhatsApp</span><br><a href="tel:+60000000000" style="font-size:1.1rem;color:var(--forest);">+60 00-000 0000</a></li>
+        <li style="margin-bottom:14px;"><span class="badge">Coverage Area</span><br><span style="font-size:1.1rem;">Klang Valley &amp; Selangor</span></li>
+      </ul>
+      <div class="dim-divider" style="margin:32px 0;padding:0;"><span class="tick"></span><span class="rule"></span><span class="label">Response time</span><span class="rule"></span><span class="tick"></span></div>
+      <p class="lede">I personally read and reply to every message — usually within 24 hours, often sooner.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <p class="foot-brand">Swoon Properties</p>
+      <p style="margin-top:10px;max-width:32ch;">Buyer's agent service helping you find and finance your perfect home — one point of contact, start to finish.</p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="listings-subsale.html">Subsale Listings</a></li>
+        <li><a href="listings-project.html">Project Listings</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="mailto:swoonproperty@gmail.com">swoonproperty@gmail.com</a></li>
+        <li><a href="tel:+60000000000">+60 00-000 0000</a></li>
+        <li><a href="contact.html">Send a Message →</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 Swoon Properties. All rights reserved.</span>
+    <span>Placeholder content — edit freely in the HTML files.</span>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>
