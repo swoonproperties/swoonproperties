@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Check Your Loan Eligibility — Swoon Properties</title>
+<meta name="description" content="Get a quick DSR (debt service ratio) estimate based on your income and current monthly commitments — before you start shortlisting homes.">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="nav-row">
+    <a href="index.html" class="brand">
+      <svg class="mark" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg">
+        <path d="M28 8 L44 14 L44 28 C44 38 36 45 28 48 C20 45 12 38 12 28 L12 14 Z" fill="#2C4A3B"/>
+        <text x="28" y="34" text-anchor="middle" font-family="Fraunces,Georgia,serif" font-size="19" font-weight="600" fill="#F3EFE6">S</text>
+      </svg>
+      <span>Swoon Properties<small>Property Specialist</small></span>
+    </a>
+    <nav class="links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Me</a>
+      <a href="services.html">Services</a>
+      <a href="eligibility.html" class="active">Check Eligibility</a>
+      <a href="listings-subsale.html">Subsale</a>
+      <a href="listings-project.html">New Project</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn btn-primary">Talk to Me</a>
+      <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<section class="hero" style="padding:56px 0 44px;">
+  <div class="wrap" style="grid-template-columns:1fr;max-width:760px;">
+    <div>
+      <p class="eyebrow">Step 1 · Before You Search</p>
+      <h1>Know your numbers before you shortlist homes.</h1>
+      <p class="lede">Key in your income and current monthly commitments to get a quick DSR (debt service ratio) estimate. This tells us roughly how much room you have — before we spend time shortlisting properties.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="dsr-calculator">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Quick Eligibility Check</p>
+      <h2>Estimate your DSR</h2>
+      <p class="lede">DSR (Debt Service Ratio) is the share of your income already committed to debt repayments. Banks use this — alongside the new home loan — to decide how much they'll lend you.</p>
+    </div>
+
+    <div class="calc">
+      <div>
+        <div class="field">
+          <label for="elig-income">Net Monthly Income (RM)</label>
+          <input type="number" id="elig-income" min="0" step="100" value="6000">
+        </div>
+        <div class="field">
+          <label for="elig-car">Car Loan / Lease Repayment (RM / month)</label>
+          <input type="number" id="elig-car" min="0" step="50" value="0">
+        </div>
+        <div class="field">
+          <label for="elig-card">Credit Card Minimum Payment(s) (RM / month)</label>
+          <input type="number" id="elig-card" min="0" step="50" value="0">
+        </div>
+        <div class="field">
+          <label for="elig-personal">Personal Loan Repayment (RM / month)</label>
+          <input type="number" id="elig-personal" min="0" step="50" value="0">
+        </div>
+        <div class="field">
+          <label for="elig-other">Other Commitments — PTPTN, other loans, etc. (RM / month)</label>
+          <input type="number" id="elig-other" min="0" step="50" value="0">
+        </div>
+      </div>
+
+      <div class="calc-result">
+        <p class="l">Estimated Current DSR</p>
+        <p class="n" id="elig-dsr">0%</p>
+        <div class="calc-breakdown">
+          <div><span>Total Monthly Commitments</span><span id="elig-total-commitments">RM 0</span></div>
+          <div><span>Net Monthly Income</span><span id="elig-income-out">RM 0</span></div>
+        </div>
+        <p class="form-note" id="elig-verdict" style="margin-top:16px;color:#C9D2CB;"></p>
+      </div>
+    </div>
+
+    <p class="form-note" style="margin-top:16px;max-width:640px;">This is a simplified estimate based on your existing commitments only — it does not yet include the repayment for a new home loan. Once you have a property in mind, use the <a href="services.html#calculator">full loan calculator</a> to see your total DSR with the new loan included, or talk to me for an accurate bank-eligibility check.</p>
+
+    <div style="margin-top:28px;display:flex;gap:16px;flex-wrap:wrap;">
+      <a href="contact.html" class="btn btn-primary">Talk to Me About My Results</a>
+      <a href="services.html#calculator" class="btn btn-ghost">Full Affordability Calculator</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <p class="foot-brand">Swoon Properties</p>
+      <p style="margin-top:10px;max-width:32ch;">Property specialist helping you find and finance your perfect home — one point of contact, start to finish.</p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="eligibility.html">Check Eligibility</a></li>
+        <li><a href="listings-subsale.html">Subsale</a>
+      <a href="listings-project.html">New Project</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="mailto:swoonproperty@gmail.com">swoonproperty@gmail.com</a></li>
+        <li><a href="tel:+60176010180">+6017 601 0180</a></li>
+        <li><a href="contact.html">Send a Message →</a></li>
+        <li><a href="https://instagram.com/swoonproperties" target="_blank" rel="noopener">Instagram: @swoonproperties</a></li>
+        <li><a href="https://facebook.com/SwoonEst" target="_blank" rel="noopener">Facebook: Swoon Est.</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap" style="margin-top:24px;">
+    <p style="font-size:0.72rem;color:#8FA096;max-width:760px;line-height:1.6;">
+      <strong style="color:#B9C4BC;">Disclaimer:</strong> The DSR and loan figures shown on this site are indicative estimates only and do not constitute a loan offer, approval, or guarantee. Final eligibility, interest rates, and loan terms are determined solely by the relevant bank or financial institution. Swoon Properties acts as your buyer's agent and personal point of coordination throughout the transaction — including connecting you with law firms and other professionals as needed. Any legal advice or legal representation remains the responsibility of the appointed lawyer.
+    </p>
+  </div>
+
+  <div class="foot-bottom">
+    <span>© 2026 Swoon Properties. All rights reserved.</span>
+    <span>Placeholder content — edit freely in the HTML files.</span>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>
