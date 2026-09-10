@@ -13,12 +13,45 @@ document.addEventListener('DOMContentLoaded', () => {
     }));
   }
 
+  renderListingGrids();
   initCalculator();
   initEligibilityCalculator();
   initListingFilters();
   initContactForm();
   initHeroPhotoScroll();
 });
+
+// ---------- New Project listing grids (homepage preview + full page) ----------
+// Both grids render from the shared PROJECT_LISTINGS array in
+// js/projects-data.js, so editing a listing there updates both places.
+function renderListingGrids() {
+  if (typeof PROJECT_LISTINGS === 'undefined') return;
+
+  function cardHtml(item) {
+    return `
+      <div class="listing-card" data-type="${item.type}">
+        <div class="listing-photo"><span class="listing-tag">${item.tag}</span></div>
+        <div class="listing-body">
+          <div class="listing-price">${item.price}</div>
+          <div class="listing-loc">${item.location}</div>
+          <div class="listing-specs">
+            <span><b>${item.beds}</b> bed</span><span><b>${item.baths}</b> bath</span><span><b>${item.sqft}</b> sqft</span>
+          </div>
+        </div>
+      </div>`;
+  }
+
+  const homeGrid = document.getElementById('home-listings-grid');
+  if (homeGrid) {
+    const featured = PROJECT_LISTINGS.filter(item => item.featured).slice(0, 3);
+    homeGrid.innerHTML = featured.map(cardHtml).join('');
+  }
+
+  const projectGrid = document.getElementById('project-listings-grid');
+  if (projectGrid) {
+    projectGrid.innerHTML = PROJECT_LISTINGS.map(cardHtml).join('');
+  }
+}
 
 // ---------- Hero photo scroll effect ----------
 // Fades and slides the hero photo out as the user scrolls past the hero.

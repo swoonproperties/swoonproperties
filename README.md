@@ -70,7 +70,7 @@ Everything is plain text inside HTML tags — open any `.html` file in a text ed
 
 - `about.html` — the two `[Edit this: ...]` paragraphs with your real story
 - Phone number — currently `+60 00-000 0000` in the footer and contact page, search-and-replace across all files
-- Listing cards — duplicate a `.listing-card` block in the listings pages to add more properties, or delete ones you don't need
+- New Project listings — edit the `PROJECT_LISTINGS` array in `js/projects-data.js` to add, remove, or update a project. Both the homepage preview and the New Project listings page render from this one file automatically, so you never need to edit them separately. Set `featured: true` on a listing to have it also show in the homepage preview (max 3).
 
 ## 5. Colors & fonts
 
