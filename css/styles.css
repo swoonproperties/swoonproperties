@@ -187,6 +187,24 @@ section.tight{padding:44px 0;}
 .band-forest .eyebrow{color:var(--brass-light);}
 .band-forest p{color:#D3DED7;}
 
+/* photo banner with dark overlay */
+.band-photo{
+  position:relative;
+  background-size:cover;
+  background-position:center;
+  color:var(--white);
+}
+.band-photo::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(90deg,rgba(22,36,30,0.92) 0%,rgba(22,36,30,0.78) 45%,rgba(22,36,30,0.55) 100%);
+}
+.band-photo .wrap{position:relative;z-index:1;max-width:640px;}
+.band-photo h2, .band-photo .eyebrow{color:var(--white);}
+.band-photo .eyebrow{color:var(--brass-light);}
+.band-photo p{color:#D3DED7;}
+
 /* =========================
    LISTINGS
    ========================= */
