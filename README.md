@@ -46,23 +46,11 @@ Put your image files in the `assets/` folder, then reference them as `assets/fil
 
 For listing photos, replace the `<div class="listing-photo">...</div>` blocks the same way — an `<img>` tag inside instead of an empty div. For video, you can embed a YouTube/Vimeo link (upload the video there for free, unlisted if you like) using an `<iframe>`, which is far lighter than hosting video files yourself.
 
-## 3. Make the contact form actually send you messages
+## 3. Contact form submissions
 
-Right now the form shows a message but doesn't email you — plain HTML/CSS/JS can't send emails on its own. Easiest free fix:
+Both the contact form (`contact.html`) and the eligibility check form (`eligibility.html`) submit to **Formspree** (formspree.io) and land as emails in your inbox — nothing further to set up. If you ever need to change the destination email or the endpoint, update it at formspree.io, and update the `action="https://formspree.io/f/..."` attribute on both `<form>` tags to match.
 
-1. Sign up free at **formspree.io** (50 free submissions/month).
-2. Create a form, get your form endpoint URL (looks like `https://formspree.io/f/xxxxxxx`).
-3. In `contact.html`, change:
-   ```html
-   <form class="contact-form">
-   ```
-   to:
-   ```html
-   <form class="contact-form" action="https://formspree.io/f/xxxxxxx" method="POST">
-   ```
-4. Remove the `e.preventDefault()` line in `js/main.js` inside `initContactForm()` (or just delete that whole function) so the form submits normally to Formspree.
-
-Alternative: if you host on Netlify instead of GitHub Pages, Netlify Forms works with zero setup — just add `data-netlify="true"` to the `<form>` tag.
+Alternative: if you host on Netlify instead of GitHub Pages, Netlify Forms works with zero setup — just add `data-netlify="true"` to the `<form>` tag instead.
 
 ## 4. Editing content
 

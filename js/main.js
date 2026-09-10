@@ -160,16 +160,39 @@ function initListingFilters() {
 function initContactForm() {
   const form = document.querySelector('form.contact-form');
   if (!form) return;
-  form.addEventListener('submit', (e) => {
+  const status = document.getElementById('form-status');
+  const submitBtn = form.querySelector('button[type=submit]');
+
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const status = document.getElementById('form-status');
-    // NOTE: this is a placeholder. To actually receive messages, connect this
-    // form to a free service like Formspree, Google Forms, or Netlify Forms.
-    // See the README for setup steps.
+    if (submitBtn) submitBtn.disabled = true;
     if (status) {
-      status.textContent = 'Thanks — this is a demo form. Connect it to Formspree/Netlify Forms (see README) so messages reach your inbox.';
-      status.style.color = '#A9793C';
+      status.textContent = 'Sending…';
+      status.style.color = 'var(--text-soft)';
     }
-    form.reset();
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (response.ok) {
+        if (status) {
+          status.textContent = "Thanks — your message is on its way. I'll get back to you within 24 hours.";
+          status.style.color = 'var(--forest)';
+        }
+        form.reset();
+      } else {
+        throw new Error('Form submission failed');
+      }
+    } catch (err) {
+      if (status) {
+        status.textContent = "Something went wrong sending that — please try again, or reach out via WhatsApp/email instead.";
+        status.style.color = '#A9793C';
+      }
+    } finally {
+      if (submitBtn) submitBtn.disabled = false;
+    }
   });
 }
