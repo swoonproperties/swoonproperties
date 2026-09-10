@@ -15,7 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   renderListingGrids();
   initCalculator();
-  initEligibilityCalculator();
   initListingFilters();
   initContactForm();
   initHeroPhotoScroll();
@@ -136,51 +135,6 @@ function initCalculator() {
   }
 
   [priceEl, downEl, rateEl, yearsEl].forEach(el => el.addEventListener('input', recalc));
-  recalc();
-}
-
-// ---------- DSR / loan eligibility calculator ----------
-function initEligibilityCalculator() {
-  const incomeEl = document.getElementById('elig-income');
-  if (!incomeEl) return; // eligibility calculator not on this page
-
-  const carEl = document.getElementById('elig-car');
-  const cardEl = document.getElementById('elig-card');
-  const personalEl = document.getElementById('elig-personal');
-  const otherEl = document.getElementById('elig-other');
-
-  const incomeOut = document.getElementById('elig-income-out');
-  const totalOut = document.getElementById('elig-total-commitments');
-  const dsrOut = document.getElementById('elig-dsr');
-  const verdictOut = document.getElementById('elig-verdict');
-
-  function fmt(n) {
-    return 'RM ' + Math.round(n).toLocaleString('en-MY');
-  }
-
-  function recalc() {
-    const income = Math.max(Number(incomeEl.value) || 0, 0);
-    const commitments = [carEl, cardEl, personalEl, otherEl]
-      .reduce((sum, el) => sum + (Math.max(Number(el.value) || 0, 0)), 0);
-
-    const dsr = income > 0 ? (commitments / income) * 100 : 0;
-
-    incomeOut.textContent = fmt(income);
-    totalOut.textContent = fmt(commitments);
-    dsrOut.textContent = dsr.toFixed(1) + '%';
-
-    if (income === 0) {
-      verdictOut.textContent = 'Enter your net monthly income to see your DSR.';
-    } else if (dsr <= 30) {
-      verdictOut.textContent = 'Strong position — you likely have plenty of room left for a new home loan.';
-    } else if (dsr <= 50) {
-      verdictOut.textContent = 'Moderate — you likely still have room, but how much depends on the loan amount. Let’s talk through it.';
-    } else {
-      verdictOut.textContent = 'Tight — your existing commitments are already high. Let’s review your numbers together before house-hunting.';
-    }
-  }
-
-  [incomeEl, carEl, cardEl, personalEl, otherEl].forEach(el => el.addEventListener('input', recalc));
   recalc();
 }
 
