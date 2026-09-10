@@ -151,7 +151,7 @@ function initEligibilityCalculator() {
   recalc();
 }
 
-// ---------- Listing filters (subsale / project pages) ----------
+// ---------- Listing filters (project pages) ----------
 function initListingFilters() {
   const buttons = document.querySelectorAll('.filter-row button');
   const cards = document.querySelectorAll('[data-type]');
