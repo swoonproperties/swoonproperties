@@ -8,7 +8,6 @@ A free, self-hosted website for your buyer's agent business. No page builder, no
 index.html                 Home page
 about.html                 About Me
 services.html              Services + interactive loan calculator
-listings-subsale.html      Subsale listings (filterable)
 listings-project.html      New project listings (filterable)
 contact.html                Contact form + direct contact info
 css/styles.css             All styling (colors, fonts, layout)
