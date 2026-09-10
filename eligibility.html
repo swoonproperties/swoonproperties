@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Check Your Loan Eligibility — Swoon Properties</title>
-<meta name="description" content="Get a quick DSR (debt service ratio) estimate based on your income and current monthly commitments — before you start shortlisting homes.">
+<meta name="description" content="Submit your income and current monthly commitments for a personal DSR (debt service ratio) review — before you start shortlisting homes.">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -38,7 +38,7 @@
   <div class="wrap" style="grid-template-columns:1fr;max-width:760px;">
     <div>
       <h1>Know your numbers before you shortlist homes.</h1>
-      <p class="lede">Key in your income and current monthly commitments to get a quick DSR (debt service ratio) estimate. This tells us roughly how much room you have — before we spend time shortlisting properties.</p>
+      <p class="lede">Submit your income and current monthly commitments and I'll personally review your DSR (debt service ratio) with you — so we both know how much room you have before we spend time shortlisting properties.</p>
     </div>
   </div>
 </section>
@@ -47,51 +47,46 @@
   <div class="wrap">
     <div class="section-head">
       <p class="eyebrow">Quick Eligibility Check</p>
-      <h2>Estimate your DSR</h2>
-      <p class="lede">DSR (Debt Service Ratio) is the share of your income already committed to debt repayments. Banks use this — alongside the new home loan — to decide how much they'll lend you.</p>
+      <h2>Get your DSR reviewed</h2>
+      <p class="lede">DSR (Debt Service Ratio) is the share of your income already committed to debt repayments. Fill in your details below and I'll personally review it with you.</p>
     </div>
 
-    <div class="calc">
-      <div>
-        <div class="field">
-          <label for="elig-income">Net Monthly Income (RM)</label>
-          <input type="number" id="elig-income" min="0" step="100" value="6000">
-        </div>
-        <div class="field">
-          <label for="elig-car">Car Loan / Lease Repayment (RM / month)</label>
-          <input type="number" id="elig-car" min="0" step="50" value="0">
-        </div>
-        <div class="field">
-          <label for="elig-card">Credit Card Minimum Payment(s) (RM / month)</label>
-          <input type="number" id="elig-card" min="0" step="50" value="0">
-        </div>
-        <div class="field">
-          <label for="elig-personal">Personal Loan Repayment (RM / month)</label>
-          <input type="number" id="elig-personal" min="0" step="50" value="0">
-        </div>
-        <div class="field">
-          <label for="elig-other">Other Commitments — PTPTN, other loans, etc. (RM / month)</label>
-          <input type="number" id="elig-other" min="0" step="50" value="0">
-        </div>
+    <form class="contact-form" style="max-width:560px;">
+      <div class="field">
+        <label for="elig-name">Full Name</label>
+        <input type="text" id="elig-name" name="name" required>
       </div>
-
-      <div class="calc-result">
-        <p class="l">Estimated Current DSR</p>
-        <p class="n" id="elig-dsr">0%</p>
-        <div class="calc-breakdown">
-          <div><span>Total Monthly Commitments</span><span id="elig-total-commitments">RM 0</span></div>
-          <div><span>Net Monthly Income</span><span id="elig-income-out">RM 0</span></div>
-        </div>
-        <p class="form-note" id="elig-verdict" style="margin-top:16px;color:#C9D2CB;"></p>
+      <div class="field">
+        <label for="elig-email">Email</label>
+        <input type="email" id="elig-email" name="email" required>
       </div>
-    </div>
-
-    <p class="form-note" style="margin-top:16px;max-width:640px;">This is a simplified estimate based on your existing commitments only — it does not yet include the repayment for a new home loan. Once you have a property in mind, use the <a href="services.html#calculator">full loan calculator</a> to see your total DSR with the new loan included, or talk to me for an accurate bank-eligibility check.</p>
-
-    <div style="margin-top:28px;display:flex;gap:16px;flex-wrap:wrap;">
-      <a href="contact.html" class="btn btn-primary">Talk to Me About My Results</a>
-      <a href="services.html#calculator" class="btn btn-ghost">Full Affordability Calculator</a>
-    </div>
+      <div class="field">
+        <label for="elig-phone">Phone / WhatsApp</label>
+        <input type="tel" id="elig-phone" name="phone">
+      </div>
+      <div class="field">
+        <label for="elig-income">Net Monthly Income (RM)</label>
+        <input type="number" id="elig-income" name="income" min="0" step="100" required>
+      </div>
+      <div class="field">
+        <label for="elig-car">Car Loan / Lease Repayment (RM / month)</label>
+        <input type="number" id="elig-car" name="car" min="0" step="50" value="0">
+      </div>
+      <div class="field">
+        <label for="elig-card">Credit Card Minimum Payment(s) (RM / month)</label>
+        <input type="number" id="elig-card" name="card" min="0" step="50" value="0">
+      </div>
+      <div class="field">
+        <label for="elig-personal">Personal Loan Repayment (RM / month)</label>
+        <input type="number" id="elig-personal" name="personal" min="0" step="50" value="0">
+      </div>
+      <div class="field">
+        <label for="elig-other">Other Commitments — PTPTN, other loans, etc. (RM / month)</label>
+        <input type="number" id="elig-other" name="other" min="0" step="50" value="0">
+      </div>
+      <button type="submit" class="btn btn-primary">Submit for My Eligibility Check</button>
+      <p class="form-note" id="form-status"></p>
+    </form>
   </div>
 </section>
 
